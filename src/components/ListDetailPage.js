@@ -19,7 +19,7 @@ function ListDetailPage() {
     // Fetch shopping list details from the server
     const fetchShoppingListDetails = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/shoppingList/${id}`);
+            const response = await fetch(`https://slpwaapi-production.up.railway.app/shoppingList/${id}`);
             if (response.status === 200) {
                 const data = await response.json();
                 setShoppingList(data);
@@ -65,7 +65,7 @@ function ListDetailPage() {
 
         try {
             // Make an API call to delete the shopping list
-            const response = await fetch(`http://localhost:8080/shoppingList/${id}`, {
+            const response = await fetch(`https://slpwaapi-production.up.railway.app/shoppingList/${id}`, {
                 method: "DELETE",
             });
 
@@ -91,7 +91,7 @@ function ListDetailPage() {
             await navigator.share({
                 title: shoppingList.title,
                 text: shoppingList.title,
-                url: `http://localhost:3000/shoppingList/${id}`,
+                url: `https://slpwaapi-production.up.railway.app/shoppingList/${id}`,
             });
 
         }catch (error) {
