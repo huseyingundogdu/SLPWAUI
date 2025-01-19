@@ -33,7 +33,7 @@ export default function ListCreate() {
 
     const handleSaveList = async () => {
         try {
-            const response = await fetch("http://localhost:8080/shoppingList", {
+            const response = await fetch("https://slpwaapi-production.up.railway.app/shoppingList", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title: marketListTitle }),
@@ -53,7 +53,7 @@ export default function ListCreate() {
                     listId: data.id,
                 }));
 
-                const saveItemsResponse = await fetch(`http://localhost:8080/item/saveAll/${data.id}`, {
+                const saveItemsResponse = await fetch(`https://slpwaapi-production.up.railway.app/item/saveAll/${data.id}`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(itemsWithListId),
