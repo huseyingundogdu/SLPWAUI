@@ -14,7 +14,7 @@ export default function Home() {
 
     const fetchShoppingList = async () => {
         try {
-            const response = await fetch("http://localhost:8080/shoppingList/all");
+            const response = await fetch("https://slpwaapi-production.up.railway.app/shoppingList/all");
             if (response.status === 200) {
                 const data = await response.json();
                 setShoppingLists(data);
@@ -39,7 +39,7 @@ export default function Home() {
         console.log(id);
         try {
             // Make the DELETE request to the API with the given item ID
-            const response = await fetch(`http://localhost:8080/shoppingList/${id}`, {
+            const response = await fetch(`https://slpwaapi-production.up.railway.app/shoppingList/${id}`, {
                 method: 'DELETE',
             });
 
